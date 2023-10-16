@@ -1,7 +1,10 @@
+import React from "react";
 import "./App.css";
 
+import Board from "./Board/Board";
+
 function App() {
-  return <h1 className="App">Hello World</h1>;
+  return <Board />;
 }
 
 export default App;

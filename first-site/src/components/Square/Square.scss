@@ -1,0 +1,24 @@
+.square {
+  background-color: #fff;
+  // border: 2px solid #999fe3;
+  border: 2px solid #d6a1eb;
+
+  float: left;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 34px;
+  text-align: center;
+
+  height: 100px;
+  width: 100px;
+
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #689ee4;
+  }
+}

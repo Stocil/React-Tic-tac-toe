@@ -1,0 +1,11 @@
+.board {
+  display: grid;
+  justify-content: center;
+  margin-top: 300px;
+
+  &-row:after {
+    clear: both;
+    content: "";
+    display: flex;
+  }
+}
