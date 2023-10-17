@@ -7,10 +7,22 @@ const lines = [1, 4, 7];
 
 function BoardRow() {
   const [squares, setSquares] = useState(Array(9).fill(null));
+  const [nextX, setNextX] = useState(true);
 
   function handleSquareClick(number) {
     const nextSquares = squares.slice();
-    nextSquares[number] = "X";
+
+    if (squares[number] !== null) {
+      return;
+    }
+
+    if (nextX) {
+      nextSquares[number] = "X";
+    } else {
+      nextSquares[number] = "O";
+    }
+
+    setNextX(!nextX);
     setSquares(nextSquares);
   }
 
