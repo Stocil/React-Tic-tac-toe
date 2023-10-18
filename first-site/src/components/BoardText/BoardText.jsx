@@ -2,7 +2,7 @@ import React from "react";
 import "./BoardText.css";
 
 function BoardText(props) {
-  const { text, textColor, winner } = props;
+  const { text, textColor, winner, isDraw } = props;
 
   let textStyle = {
     color: textColor,
@@ -13,6 +13,9 @@ function BoardText(props) {
     textStyle.fontSize = "50px";
   } else if (winner === "O") {
     textStyle.color = "#d6a1eb";
+    textStyle.fontSize = "70px";
+  } else if (isDraw) {
+    textStyle.color = "#689ee4";
     textStyle.fontSize = "70px";
   }
 

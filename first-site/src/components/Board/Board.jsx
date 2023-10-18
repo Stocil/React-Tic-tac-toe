@@ -8,8 +8,26 @@ function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   let isOver = false;
 
+  let nullCount = 0;
+  let draw = false;
+  for (let square of squares) {
+    if (square === null) {
+      nullCount++;
+    }
+  }
+
+  if (nullCount === 0) {
+    draw = true;
+    console.log("fjfjhfj");
+  }
+
   const winner = calculateWinner(squares);
   let boardText = `Next turn is ${nextX ? "X" : "O"}`;
+
+  if (draw) {
+    isOver = true;
+    boardText = `Draw `;
+  }
 
   if (winner) {
     isOver = true;
@@ -20,7 +38,12 @@ function Board() {
 
   return (
     <div className="board">
-      <BoardText text={boardText} textColor={textColor} winner={winner} />
+      <BoardText
+        text={boardText}
+        textColor={textColor}
+        winner={winner}
+        isDraw={draw}
+      />
       <BoardRow
         squares={squares}
         handleSquareClick={handleSquareClick}
@@ -84,63 +107,7 @@ function Board() {
       ) {
         return "O";
       }
-      // if (line.toString() === xLines.toString()) {
-      //   return "X";
-      // } else if (line.toString() === oLines.toString()) {
-      //   return "O";
-      // }
     }
-
-    // 2 Способ
-    // for (let square = 0; square < squares.length; square++) {
-    //   if (squares[square] === "X") {
-    //     xLines.push(square);
-    //   } else if (squares[square] === "O") {
-    //     oLines.push(square);
-    //   }
-    // }
-
-    // if (isWin(xLines) || isWin(oLines)) {
-    //   if (isWin(xLines)) return "X";
-    //   else return "O";
-    // } else {
-    //   return null;
-    // }
-
-    // function isWin(lines) {
-    //   let maxLength = 0;
-    //   let length = 1;
-
-    //   for (let index = 0; index < lines.length - 1; index++) {
-    //     if (lines[index] + 1 === lines[index + 1]) {
-    //       length++;
-
-    //       if (length > maxLength) {
-    //         maxLength = length;
-    //         if (maxLength === 3) return true;
-    //       }
-    //     } else {
-    //       length = 1;
-    //     }
-    //   }
-
-    //   let maxColumnLenght = 0;
-    //   let columnLength = 1;
-
-    //   for (let index = 0; index < lines.length - 1; index++) {
-    //     if (lines[index] + 3 === lines[index + 1]) {
-    //       columnLength++;
-
-    //       if (columnLength > maxColumnLenght) {
-    //         maxColumnLenght = columnLength;
-    //         if (maxColumnLenght === 3) return true;
-    //       }
-    //     } else {
-    //       columnLength = 1;
-    //     }
-    //   }
-
-    // }
   }
 }
 
