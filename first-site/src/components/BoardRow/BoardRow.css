@@ -3,7 +3,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 300px;
+  margin-top: 200px;
 }
 .board-row:after {
   clear: both;

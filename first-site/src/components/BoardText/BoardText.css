@@ -1,0 +1,9 @@
+.board__text {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #689ee4;
+  -webkit-transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
