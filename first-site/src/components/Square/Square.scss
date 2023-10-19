@@ -1,24 +1,29 @@
-.square {
-  background-color: #fff;
+.squareX,
+.squareO {
+  background-color: #6b6871;
   // border: 2px solid #999fe3;
-  border: 2px solid #d6a1eb;
+  border: 2px solid #fff;
 
   float: left;
-  font-size: 50px;
+  font-size: 70px;
   font-weight: bold;
   line-height: 34px;
   text-align: center;
 
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
 
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
 
   transition: background-color 0.3s ease-in-out;
+}
 
-  &:hover {
-    background-color: #689ee4;
-  }
+.squareX:hover {
+  background-color: #689ee4;
+}
+
+.squareO:hover {
+  background-color: #d6a1eb;
 }

@@ -3,7 +3,9 @@ import React, { useState } from "react";
 import BoardRow from "../BoardRow/BoardRow";
 import BoardText from "../BoardText/BoardText";
 
-function Board() {
+function Board(props) {
+  // const {history} = props
+
   const [nextX, setNextX] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
   let isOver = false;
@@ -37,7 +39,7 @@ function Board() {
   const textColor = nextX ? "#689ee4" : "#d6a1eb";
 
   return (
-    <div className="board">
+    <div className="game-board">
       <BoardText
         text={boardText}
         textColor={textColor}

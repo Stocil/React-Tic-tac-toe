@@ -1,11 +1,11 @@
-.board {
+.game-board {
   display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 200px;
 }
-.board-row:after {
+.game-board-row:after {
   clear: both;
   content: "";
   display: -webkit-box;

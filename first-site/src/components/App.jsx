@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
 
-import Board from "./Board/Board";
+import Game from "./Game/Game";
 
 function App() {
-  return <Board />;
+  return <Game />;
 }
 
 export default App;
