@@ -1,0 +1,25 @@
+.game-history {
+  &__list {
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__item {
+  }
+  &__button {
+    cursor: pointer;
+    padding: 10px 15px;
+
+    background-color: transparent;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+
+    // border: 2px solid black;
+    // border-radius: 15px;
+    border: none;
+    border-bottom: 2px solid black;
+  }
+}

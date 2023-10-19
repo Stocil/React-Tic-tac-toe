@@ -10,17 +10,14 @@ function BoardText(props) {
 
   if (winner === "X") {
     textStyle.color = "#689ee4";
-    textStyle.fontSize = "50px";
+    textStyle.fontSize = "70px";
   } else if (winner === "O") {
     textStyle.color = "#d6a1eb";
-    textStyle.fontSize = "70px";
-  } else if (isDraw) {
-    textStyle.color = "#689ee4";
     textStyle.fontSize = "70px";
   }
 
   return (
-    <p className="board__text" style={textStyle}>
+    <p className={isDraw ? "draw" : "board__text"} style={textStyle}>
       {text}
     </p>
   );

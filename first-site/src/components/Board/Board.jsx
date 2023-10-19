@@ -1,29 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 
 import BoardRow from "../BoardRow/BoardRow";
 import BoardText from "../BoardText/BoardText";
 
 function Board(props) {
-  // const {history} = props
+  const { nextX, squares, onClick } = props;
 
-  const [nextX, setNextX] = useState(true);
-  const [squares, setSquares] = useState(Array(9).fill(null));
   let isOver = false;
+  let draw = true;
+  const winner = calculateWinner(squares);
 
-  let nullCount = 0;
-  let draw = false;
   for (let square of squares) {
     if (square === null) {
-      nullCount++;
+      draw = false;
     }
   }
 
-  if (nullCount === 0) {
-    draw = true;
-    console.log("fjfjhfj");
-  }
-
-  const winner = calculateWinner(squares);
   let boardText = `Next turn is ${nextX ? "X" : "O"}`;
 
   if (draw) {
@@ -68,8 +60,7 @@ function Board(props) {
       nextSquares[number] = "O";
     }
 
-    setNextX(!nextX);
-    setSquares(nextSquares);
+    onClick(nextSquares);
   }
 
   function calculateWinner(squares) {

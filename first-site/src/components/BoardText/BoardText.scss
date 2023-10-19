@@ -1,8 +1,10 @@
 .board {
   &__text {
+    margin: 0 0 50px 0;
+
     text-align: center;
     font-family: "Montserrat", sans-serif;
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 700;
     color: #689ee4;
 
@@ -10,4 +12,22 @@
 
     background-clip: text;
   }
+}
+
+.draw {
+  margin: 0 0 50px 0;
+
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+
+  transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+
+  background-clip: text;
+  background: linear-gradient(180deg, #d6a1eb 50%, #689ee4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  color: #689ee4;
+  font-size: 70px;
 }
