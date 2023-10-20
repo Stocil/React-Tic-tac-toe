@@ -8,10 +8,8 @@ function Game() {
   const [nextX, setNextX] = useState(true);
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
-  // const currentSquares = history[history.length - 1];
-  const currentSquares = history[currentMove];
 
-  // console.log(currentMove, history[currentMove]);
+  const currentSquares = history[currentMove];
 
   return (
     <div className="game">
@@ -27,10 +25,9 @@ function Game() {
   function gameHandle(newSquare) {
     setNextX(!nextX);
 
-    // ... to get new history array with newSquare on the end
-    setHistory([...history, newSquare]);
-
+    // setHistory([...history, newSquare]);
     setCurrentMove(currentMove + 1);
+    setHistory([...history.slice(0, currentMove + 1), newSquare]);
   }
 }
 

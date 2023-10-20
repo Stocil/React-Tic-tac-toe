@@ -1,23 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Square.css";
 
 function Square(props) {
-  const { value, onSquareClick, isOver, turn, squares } = props;
-  const [color, setColor] = useState();
+  const { value, onSquareClick, turn, index, colors } = props;
 
-  const buttonClass = turn ? "squareX" : "squareO";
+  const currentColor = colors[index];
+
+  let buttonClass;
+
+  if (currentColor === "#689ee4") {
+    buttonClass = "square squareX";
+  } else if (currentColor === "#e5c1f3") {
+    buttonClass = "square squareO";
+  } else {
+    buttonClass = turn ? "square squareHoverO" : "square squareHoverX";
+  }
 
   function handleClick() {
     onSquareClick();
-
-    if (!isOver) {
-      if (turn) setColor({ backgroundColor: "#689ee4" });
-      else setColor({ backgroundColor: "#e5c1f3" });
-    }
   }
 
   return (
-    <button className={buttonClass} onClick={handleClick} style={color}>
+    <button className={buttonClass} onClick={handleClick}>
       {value}
     </button>
   );

@@ -1,5 +1,4 @@
-.squareX,
-.squareO {
+.square {
   background-color: #6b6871;
   border: 2px solid #fff;
   float: left;
@@ -16,10 +15,18 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-.squareX:hover {
+.squareHoverX:hover {
+  background-color: #d6a1eb;
+}
+
+.squareHoverO:hover {
   background-color: #689ee4;
 }
 
-.squareO:hover {
+.squareX {
+  background-color: #689ee4;
+}
+
+.squareO {
   background-color: #d6a1eb;
 }
