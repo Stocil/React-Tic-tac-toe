@@ -15,18 +15,21 @@ function BoardRow(props) {
         onSquareClick={() => handleSquareClick(line - 1)}
         isOver={isOver}
         turn={turn}
+        squares={squares}
       />
       <Square
         value={squares[line]}
         onSquareClick={() => handleSquareClick(line)}
         isOver={isOver}
         turn={turn}
+        squares={squares}
       />
       <Square
         value={squares[line + 1]}
         onSquareClick={() => handleSquareClick(line + 1)}
         isOver={isOver}
         turn={turn}
+        squares={squares}
       />
     </div>
   ));

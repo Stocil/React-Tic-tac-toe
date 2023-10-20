@@ -2,7 +2,7 @@ import React from "react";
 import "./Moves.css";
 
 function Moves(props) {
-  const { history } = props;
+  const { history, setNextX, setCurrentMove } = props;
 
   const moves = history.map((move, index) => {
     let description;
@@ -17,7 +17,7 @@ function Moves(props) {
       <li key={index} className="game-history__item">
         <button
           className="game-history__button"
-          onClick={() => backToTurn(move)}
+          onClick={() => backToTurn(index)}
         >
           {description}
         </button>
@@ -31,8 +31,9 @@ function Moves(props) {
     </div>
   );
 
-  function backToTurn(moveHistory) {
-    console.log(moveHistory);
+  function backToTurn(moveIndex) {
+    setCurrentMove(moveIndex);
+    setNextX(moveIndex % 2 === 0);
   }
 }
 

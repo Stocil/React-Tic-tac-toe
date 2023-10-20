@@ -7,12 +7,20 @@ import Moves from "../Moves/Moves";
 function Game() {
   const [nextX, setNextX] = useState(true);
   const [history, setHistory] = useState([Array(9).fill(null)]);
-  const currentSquares = history[history.length - 1];
+  const [currentMove, setCurrentMove] = useState(0);
+  // const currentSquares = history[history.length - 1];
+  const currentSquares = history[currentMove];
+
+  // console.log(currentMove, history[currentMove]);
 
   return (
     <div className="game">
       <Board nextX={nextX} squares={currentSquares} onClick={gameHandle} />
-      <Moves history={history} />
+      <Moves
+        history={history}
+        setNextX={setNextX}
+        setCurrentMove={setCurrentMove}
+      />
     </div>
   );
 
@@ -21,6 +29,8 @@ function Game() {
 
     // ... to get new history array with newSquare on the end
     setHistory([...history, newSquare]);
+
+    setCurrentMove(currentMove + 1);
   }
 }
 

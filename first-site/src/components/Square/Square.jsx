@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Square.css";
 
 function Square(props) {
-  const { value, onSquareClick, isOver, turn } = props;
+  const { value, onSquareClick, isOver, turn, squares } = props;
   const [color, setColor] = useState();
 
   const buttonClass = turn ? "squareX" : "squareO";
