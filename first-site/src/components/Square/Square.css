@@ -1,4 +1,5 @@
 .square {
+  cursor: pointer;
   background-color: #6b6871;
   border: 2px solid #fff;
   float: left;

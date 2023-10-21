@@ -2,7 +2,7 @@ import React from "react";
 import "./Moves.css";
 
 function Moves(props) {
-  const { history, setNextX, setCurrentMove } = props;
+  const { history, setNextX, setCurrentMove, currentMove } = props;
 
   const moves = history.map((move, index) => {
     let description;
@@ -13,12 +13,16 @@ function Moves(props) {
       description = `Go to move #${index}`;
     }
 
+    console.log(index, currentMove);
+
+    const className =
+      index === currentMove
+        ? "game-history__button game-history__button_active"
+        : "game-history__button";
+
     return (
       <li key={index} className="game-history__item">
-        <button
-          className="game-history__button"
-          onClick={() => backToTurn(index)}
-        >
+        <button className={className} onClick={() => backToTurn(index)}>
           {description}
         </button>
       </li>

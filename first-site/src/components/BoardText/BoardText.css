@@ -5,8 +5,8 @@
   font-size: 40px;
   font-weight: 700;
   color: #689ee4;
-  -webkit-transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+  -webkit-transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
   -webkit-background-clip: text;
           background-clip: text;
 }
@@ -16,13 +16,12 @@
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  -webkit-transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+  -webkit-transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
   background-clip: text;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #d6a1eb), to(#689ee4));
   background: linear-gradient(180deg, #d6a1eb 50%, #689ee4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #689ee4;
   font-size: 70px;
 }

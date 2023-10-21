@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .game-history__list {
   padding: 0;
   list-style: none;
@@ -8,23 +9,94 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 .game-history__button {
   cursor: pointer;
+  position: relative;
   padding: 10px 15px;
   background-color: transparent;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   border: none;
   border-bottom: 2px solid black;
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
 .game-history__button:hover {
-  -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.game-history__button:hover::before {
+  width: 100%;
+}
+.game-history__button::after {
+  content: "ᐊ";
+  opacity: 0;
+  -webkit-transform: scale(0.1);
+      -ms-transform: scale(0.1);
+          transform: scale(0.1);
+  position: absolute;
+  top: 10%;
+  left: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25px;
+  height: 35px;
+  font-size: 30px;
+  color: black;
+  -webkit-transition: opacity 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+.game-history__button::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 0px;
+  height: 2px;
+  background: -webkit-gradient(linear, left top, right top, from(#d6a1eb), to(#689ee4));
+  background: linear-gradient(to right, #d6a1eb, #689ee4);
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+.game-history__button_active {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.game-history__button_active::after {
+  content: "ᐊ";
+  opacity: 1;
+  -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+          transform: rotate(0);
+  position: absolute;
+  top: 10%;
+  left: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25px;
+  height: 30px;
+  font-size: 30px;
+  color: black;
 }

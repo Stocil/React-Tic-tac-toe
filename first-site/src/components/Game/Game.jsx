@@ -18,6 +18,7 @@ function Game() {
         history={history}
         setNextX={setNextX}
         setCurrentMove={setCurrentMove}
+        currentMove={currentMove}
       />
     </div>
   );

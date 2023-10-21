@@ -5,11 +5,12 @@
 
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
   }
 
   &__button {
     cursor: pointer;
+    position: relative;
     padding: 10px 15px;
 
     background-color: transparent;
@@ -21,10 +22,74 @@
     border: none;
     border-bottom: 2px solid black;
 
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.4s ease-in-out;
 
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.2);
+
+      &::before {
+        width: 100%;
+      }
+    }
+
+    &::after {
+      content: "ᐊ";
+
+      opacity: 0;
+      transform: scale(0.1);
+
+      position: absolute;
+      top: 10%;
+      left: 100%;
+
+      display: flex;
+      align-items: center;
+      width: 25px;
+      height: 35px;
+
+      font-size: 30px;
+      color: black;
+
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+
+      display: flex;
+      align-items: center;
+      width: 0px;
+      height: 2px;
+
+      background: linear-gradient(to right, #d6a1eb, #689ee4);
+
+      transition: width 0.5s ease-in-out;
+    }
+
+    &_active {
+      transform: scale(1.2);
+
+      &::after {
+        content: "ᐊ";
+        opacity: 1;
+        transform: rotate(0);
+
+        position: absolute;
+        top: 10%;
+        left: 100%;
+
+        display: flex;
+        align-items: center;
+        width: 25px;
+        height: 30px;
+
+        font-size: 30px;
+        color: black;
+      }
     }
   }
 }
