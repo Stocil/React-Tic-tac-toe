@@ -6,7 +6,6 @@ import BoardText from "../BoardText/BoardText";
 function Board(props) {
   const { nextX, squares, onClick } = props;
 
-  // let isOver = false;
   let draw = true;
   const winner = calculateWinner(squares);
   const colors = giveColor(squares);
@@ -20,12 +19,10 @@ function Board(props) {
   let boardText = `Next turn is ${nextX ? "X" : "O"}`;
 
   if (draw) {
-    // isOver = true;
     boardText = `Draw `;
   }
 
   if (winner) {
-    // isOver = true;
     draw = false;
     boardText = `Winner is ${winner}`;
   }
