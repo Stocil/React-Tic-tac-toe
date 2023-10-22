@@ -1,4 +1,7 @@
 .game {
+  position: relative;
+  margin: 0 auto;
+  max-width: 900px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -3,6 +3,7 @@ import "./Game.css";
 
 import Board from "../Board/Board";
 import Moves from "../Moves/Moves";
+import RestartButton from "../RestartButton/RestartButton";
 
 function Game() {
   const [nextX, setNextX] = useState(true);
@@ -13,6 +14,7 @@ function Game() {
 
   return (
     <div className="game">
+      <RestartButton onClick={gameRestart} />
       <Board nextX={nextX} squares={currentSquares} onClick={gameHandle} />
       <Moves
         history={history}
@@ -25,10 +27,14 @@ function Game() {
 
   function gameHandle(newSquare) {
     setNextX(!nextX);
-
-    // setHistory([...history, newSquare]);
     setCurrentMove(currentMove + 1);
     setHistory([...history.slice(0, currentMove + 1), newSquare]);
+  }
+
+  function gameRestart() {
+    setNextX(true);
+    setHistory([Array(9).fill(null)]);
+    setCurrentMove(0);
   }
 }
 

@@ -100,3 +100,12 @@
   font-size: 30px;
   color: black;
 }
+.game-history__text {
+  font-size: 36px;
+  font-family: "Montserrat", sans-serif;
+  background-clip: text;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #d6a1eb), to(#689ee4));
+  background: linear-gradient(180deg, #d6a1eb 50%, #689ee4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

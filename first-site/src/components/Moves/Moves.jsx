@@ -31,6 +31,7 @@ function Moves(props) {
 
   return (
     <div className="game-history">
+      <p className="game-history__text">History </p>
       <ul className="game-history__list">{moves}</ul>
     </div>
   );

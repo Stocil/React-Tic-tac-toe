@@ -1,0 +1,22 @@
+.restart-button {
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+
+  position: absolute;
+  left: 30%;
+  top: 10%;
+
+  width: 40px;
+  height: 40px;
+
+  transform: rotate(0);
+  background-image: url("./restart.png");
+
+  transition: transform 0.5s ease-in-out;
+
+  &:hover {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,24 @@
+.restart-button {
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  left: 30%;
+  top: 10%;
+  width: 40px;
+  height: 40px;
+  -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+          transform: rotate(0);
+  background-image: url("./restart.png");
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+.restart-button:hover {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
