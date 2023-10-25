@@ -6,11 +6,16 @@ import Moves from "../Moves/Moves";
 import RestartButton from "../RestartButton/RestartButton";
 
 function Game() {
-  const [nextX, setNextX] = useState(true);
-  const [history, setHistory] = useState([Array(9).fill(null)]);
-  const [currentMove, setCurrentMove] = useState(0);
-
-  const currentSquares = history[currentMove];
+  const {
+    gameRestart,
+    gameHandle,
+    currentSquares,
+    history,
+    nextX,
+    setNextX,
+    setCurrentMove,
+    currentMove,
+  } = useGame();
 
   return (
     <div className="game">
@@ -24,6 +29,14 @@ function Game() {
       />
     </div>
   );
+}
+
+function useGame() {
+  const [nextX, setNextX] = useState(true);
+  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const [currentMove, setCurrentMove] = useState(0);
+
+  const currentSquares = history[currentMove];
 
   function gameHandle(newSquare) {
     setNextX(!nextX);
@@ -36,6 +49,17 @@ function Game() {
     setHistory([Array(9).fill(null)]);
     setCurrentMove(0);
   }
+
+  return {
+    gameRestart,
+    gameHandle,
+    currentSquares,
+    history,
+    nextX,
+    setNextX,
+    setCurrentMove,
+    currentMove,
+  };
 }
 
 export default Game;
