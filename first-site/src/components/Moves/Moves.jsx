@@ -13,8 +13,6 @@ function Moves(props) {
       description = `Go to move #${index}`;
     }
 
-    console.log(index, currentMove);
-
     const className =
       index === currentMove
         ? "game-history__button game-history__button_active"
